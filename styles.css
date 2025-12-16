@@ -1,0 +1,190 @@
+/* Fichier: styles.css */
+
+/* Définition des couleurs basées sur la charte Garance (vert/turquoise) */
+:root {
+    --garance-color-primary: #008080; 
+    --garance-color-secondary: #3cb371; 
+    --garance-color-light: #f7f9fb; 
+    --garance-color-text: #333333; 
+    --garance-color-accent: #76c085; 
+    --garance-color-white: #ffffff;
+    --garance-color-border: #e0e0e0;
+}
+
+body {
+    font-family: 'Wix Madefor Display', Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: var(--garance-color-light);
+    color: var(--garance-color-text);
+}
+
+.garance-header {
+    background-color: var(--garance-color-primary);
+    color: var(--garance-color-white);
+    padding: 15px 0;
+    text-align: center;
+}
+
+.header-content {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.logo-placeholder {
+    font-weight: 700;
+    font-size: 1.5em;
+    color: #ccf5ff;
+    margin-bottom: 5px;
+}
+
+.garance-header h1 {
+    margin: 0;
+    font-size: 1.5em;
+    font-weight: 400; 
+}
+
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 30px auto;
+    padding: 30px;
+    background-color: var(--garance-color-white);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    border-radius: 8px;
+}
+
+/* Titres de sections */
+section h2 {
+    color: var(--garance-color-primary);
+    border-bottom: 2px solid var(--garance-color-border);
+    padding-bottom: 10px;
+    margin-bottom: 25px;
+}
+
+/* Titre des UC */
+section h3 {
+    color: var(--garance-color-primary);
+    margin-top: 30px;
+    font-size: 1.2em;
+}
+
+/* ----------------------------------------------------
+ * Styles des Titres d'Allocation (Fonds Euros et Total UC)
+ * ---------------------------------------------------- */
+.allocation-summary-title {
+    font-size: 1.2em; /* Taille unifiée */
+    font-weight: bold;
+    color: var(--garance-color-primary);
+}
+
+.allocation-summary-title-uc {
+    font-size: 1.2em; /* Taille unifiée */
+}
+
+/* -------------------------------------
+ * Fonds Euros et UC (Mise en page)
+ * ------------------------------------- */
+
+.fonds-euros-summary {
+    padding: 10px 0;
+    margin-bottom: 20px;
+    border-bottom: 1px dashed var(--garance-color-border);
+}
+
+.fonds-euros-summary .label-wrapper {
+    display: flex;
+    justify-content: space-between; /* Alignement du % à droite */
+    align-items: baseline;
+    margin-bottom: 5px;
+}
+
+.fonds-euros-summary small {
+    display: block;
+    margin-top: 5px;
+    color: var(--garance-color-text);
+    font-weight: 400;
+}
+
+/* Nom des UC en Gras */
+.uc-name {
+    font-weight: bold;
+    color: var(--garance-color-primary);
+    margin-right: 5px;
+}
+
+.caracteristics {
+    font-weight: normal;
+    font-size: 0.9em;
+    color: #666;
+}
+
+/* -------------------------------------
+ * Sliders (UC) - Alignement à droite
+ * ------------------------------------- */
+.slider-group {
+    margin-bottom: 18px;
+    padding: 10px 0;
+}
+
+.slider-label {
+    display: flex;
+    justify-content: space-between; /* Alignement de l'info à gauche et du % à droite */
+    align-items: baseline;
+    margin-bottom: 5px;
+    color: var(--garance-color-text);
+}
+
+.slider-info {
+    display: flex;
+    align-items: baseline;
+}
+
+.allocation-percent {
+    font-weight: bold;
+    font-size: 1em; /* Assure que le pourcentage est lisible et aligné */
+    color: var(--garance-color-primary);
+}
+
+/* Le reste des styles de slider et des indicateurs reste inchangé */
+input[type="range"] {
+    width: 100%;
+    height: 8px;
+    -webkit-appearance: none;
+    background: var(--garance-color-border);
+    border-radius: 4px;
+    outline: none;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: var(--garance-color-secondary); 
+    border: 3px solid var(--garance-color-white);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+
+.indicators-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 20px;
+}
+
+.result-value {
+    font-size: 2.5em; 
+    font-weight: 700;
+    color: var(--garance-color-secondary);
+    margin: 5px 0 10px 0;
+}
+
+/* Les styles du .warning-message restent inchangés */

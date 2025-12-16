@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Garance - Simulateur d'Allocation Pilotée Personnalisé</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Wix+Madefor+Display:wght@400;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="styles.css"> 
+</head>
+<body>
+
+    <header class="garance-header">
+        <div class="header-content">
+            <div class="logo-placeholder">Garance</div>
+            <h1>Simulateur d'Allocation Pilotée Personnalisé</h1>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="allocation-sliders">
+            <h2>Allocation de l'Épargne</h2>
+            
+            <div class="fonds-euros-summary uc-like">
+                <div class="label-wrapper">
+                    <label class="allocation-summary-title">Fonds Euros :</label>
+                    <span id="percent-fonds-euros" class="allocation-summary-title">100%</span>
+                </div>
+                <small class="caracteristics">(SRI 1, Rend. 2.5%, Vol. 0.5%)</small>
+            </div>
+
+            <hr>
+            <h3 class="allocation-summary-title-uc">Unités de Compte (UC) - Allocation Totale : <span id="percent-uc-total">0</span>%</h3>
+
+            <div class="slider-group uc-group">
+                <label for="slider-etf-tech-us" class="slider-label">
+                    <div class="slider-info">
+                        <span class="uc-name">ETF Action Tech US</span> 
+                        <small class="caracteristics">(SRI 5, Rend. 10%, Vol. 15%)</small>
+                    </div>
+                    <span id="percent-etf-tech-us" class="allocation-percent">0%</span>
+                </label>
+                <input type="range" id="slider-etf-tech-us" min="0" max="100" value="0" step="5">
+            </div>
+
+            <div class="slider-group uc-group">
+                <label for="slider-opc-europe" class="slider-label">
+                    <div class="slider-info">
+                        <span class="uc-name">OPC Actions Europe</span> 
+                        <small class="caracteristics">(SRI 4, Rend. 7%, Vol. 12%)</small>
+                    </div>
+                    <span id="percent-opc-europe" class="allocation-percent">0%</span>
+                </label>
+                <input type="range" id="slider-opc-europe" min="0" max="100" value="0" step="5">
+            </div>
+            
+            <div class="slider-group uc-group">
+                <label for="slider-opc-oblig-monde" class="slider-label">
+                    <div class="slider-info">
+                        <span class="uc-name">OPC Obligation Monde</span> 
+                        <small class="caracteristics">(SRI 3, Rend. 5%, Vol. 6%)</small>
+                    </div>
+                    <span id="percent-opc-oblig-monde" class="allocation-percent">0%</span>
+                </label>
+                <input type="range" id="slider-opc-oblig-monde" min="0" max="100" value="0" step="5">
+            </div>
+
+            <div class="slider-group uc-group">
+                <label for="slider-etf-monetaire" class="slider-label">
+                    <div class="slider-info">
+                        <span class="uc-name">ETF Obligation Monétaire</span> 
+                        <small class="caracteristics">(SRI 2, Rend. 3%, Vol. 1%)</small>
+                    </div>
+                    <span id="percent-etf-monetaire" class="allocation-percent">0%</span>
+                </label>
+                <input type="range" id="slider-etf-monetaire" min="0" max="100" value="0" step="5">
+            </div>
+
+            <div class="slider-group uc-group">
+                <label for="slider-fonds-immo" class="slider-label">
+                    <div class="slider-info">
+                        <span class="uc-name">Fonds Immobilier</span> 
+                        <small class="caracteristics">(SRI 3, Rend. 6%, Vol. 4%)</small>
+                    </div>
+                    <span id="percent-fonds-immo" class="allocation-percent">0%</span>
+                </label>
+                <input type="range" id="slider-fonds-immo" min="0" max="100" value="0" step="5">
+            </div>
+            
+            <div id="allocation-sum-warning" class="warning-message valid-message"></div>
+        </section>
+        
+        <section class="results-indicators">
+            <h2>Indicateurs Agrégés de l'Allocation</h2>
+            <div class="indicators-grid four-columns">
+                
+                <div class="indicator-box">
+                    <h3>SRI Agrégé</h3>
+                    <p class="result-value" id="result-sri">1.0</p>
+                    <small>Indicateur Synthétique de Risque</small>
+                </div>
+                
+                <div class="indicator-box">
+                    <h3>Rendement Attendu</h3>
+                    <p class="result-value" id="result-rendement">2.50%</p>
+                    <small>Estimation Annuelle</small>
+                </div>
+
+                <div class="indicator-box">
+                    <h3>Volatilité Attendue</h3>
+                    <p class="result-value" id="result-volatilite">0.50%</p>
+                    <small>Amplitude des variations</small>
+                </div>
+
+                <div class="indicator-box diversification-box">
+                    <h3>Diversification</h3>
+                    <p class="result-value" id="result-diversification">1/6</p>
+                    <small>Actifs alloués ( > 0%)</small>
+                </div>
+                
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
